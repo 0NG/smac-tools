@@ -2,6 +2,7 @@
 
 ## Compile
 
+Make sure that you have CMake, clang++, and git available in your environment. Maybe a new version of g++ also works, but I didn't use it. Remember to read the [Issues](https://github.com/0NG/smac-tools?tab=readme-ov-file#issues) when you start to compile.
 ```
 git clone https://github.com/jarro2783/cxxopts.git ./src/3rd/cxxopts
 
@@ -55,4 +56,5 @@ The whole list of test vectors is in `test-vectors.txt`.
 * It's normal that you spend a little bit long time on compiling the program at the first time. Take a coffee and have a break.
 * It's **random** if your complier complains about `abseil`. I don't know why and how to solve. I only had this once and a re-compilation solved. However, some people couldn't solve it for a long time.
 * I use **C++20**, so please use a modern C++ compiler. Otherwise, unknown errors could raise. FYI, mine is clang++-15.
+* As you can see in the [CMakeLists.txt](https://github.com/0NG/smac-tools/blob/main/CMakeLists.txt), CMake version older than 3.27 is not supported. This is mostly due to OR-Tools. Also, I use new version of CMake. To make sure that everything works correctly, please follow this requirement and update your CMake via Kitware's repo if you're using Ubuntu.
 * I only tested `mac_universal` on my Intel i7-11xxx and the AMD Zen in the data center. Not sure if it works on other platform. Feel free to report any problem not listed above.
