@@ -11,7 +11,8 @@ git clone https://github.com/google/or-tools.git ./src/3rd/or-tools
 mkdir build
 cd build
 CC=clang CXX=clang++ cmake ..
-make
+make mac_universal
+make smac_demo
 ```
 
 ## Run
