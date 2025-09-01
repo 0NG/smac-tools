@@ -22,6 +22,7 @@ clang++ smac.cpp -o smac_perf -march=native -O3
 ./smac_perf
 ```
 In lines 39-41 of `smac.cpp`, you can uncomment other versions and recompile to test SMAC1, SMAC1x4, and SMAC1x8.
+`g++` should also work. Also, on my computer, `g++` produces a faster executable than `clang++`.
 
 ## Run
 
