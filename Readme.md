@@ -15,6 +15,14 @@ make mac_universal
 make smac_demo
 ```
 
+To compile the code for performance, run
+```
+cd src
+clang++ smac.cpp -o smac_perf -march=native -O3
+./smac_perf
+```
+In lines 39-41 of `smac.cpp`, you can uncomment other versions and recompile to test SMAC1, SMAC1x4, and SMAC1x8.
+
 ## Run
 
 The help manual of `./build/bin/mac_universal` shows everything you need. Examples are as follows.
@@ -44,6 +52,12 @@ To test t+3 for only one sigma, simply replace the `--file` option with `-s` lik
 ```
 mac_universal -s 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --round 3 --thread 16 --threshold 19 -t 57600 -l 1
 ```
+
+Dummy clocks are given by the option `--dpi=`. The value to this option is a list of indices where the constant msg is compressed. For example, to test SMAC-1/2 and t+5, run
+```
+mac_universal -s 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --round 5 --thread 16 --threshold 19 -t 57600 -l 1 --dpi=1,3
+```
+which means the clocks 1 and 3 are dummy rounds taking the constant msg.
 
 To run the demo of SMAC, use `./build/bin/smac_demo`.
 
