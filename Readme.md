@@ -26,7 +26,7 @@ In lines 39-41 of `smac.cpp`, you can uncomment other versions and recompile to 
 
 ## Run
 
-The help manual of `./build/bin/mac_universal` shows everything you need. Examples are as follows.
+The help manual of `./build/bin/mac_universal` shows everything you need (`./build/bin/mac_universal -h`). Examples are as follows.
 **Please remember that these examples are just examples!**
 The runtime depends on the hardware and we did not use only 16 threads.
 A stronger sigma usually means a longer runtime.
@@ -59,6 +59,8 @@ Dummy clocks are given by the option `--dpi=`. The value to this option is a lis
 mac_universal -s 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --round 5 --thread 16 --threshold 19 -t 57600 -l 1 --dpi=1,3
 ```
 which means the clocks 1 and 3 are dummy rounds taking the constant msg.
+
+To generate patterns of sigmas that have the same differential trails, use `-l 2`.
 
 To run the demo of SMAC, use `./build/bin/smac_demo`.
 
